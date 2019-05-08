@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "product1",
+      "quote": "100",
+      "votes": "1"
+    },
+  {
+    "id": 2,
+    "name": "product2",
+    "quote": "200",
+    "votes": "2"
+  },
+  {
+    "id": 3,
+    "name": "product3",
+    "quote": "300",
+    "votes": "3"
+  },
+  {
+    "id": 4,
+    "name": "product4",
+    "quote": "400",
+    "votes": "4"
+  },
+  {
+    "id": 5,
+    "name": "product5",
+    "quote": "500",
+    "votes": "5"
+  },
+  {
+    "id": 6,
+    "name": "product6",
+    "quote": "600",
+    "votes": "6"
+  },
+  {
+    "id": 7,
+    "name": "product7",
+    "quote": "700",
+    "votes": "7"
+  },
+  {
+    "id": 8,
+    "name": "product8",
+    "quote": "800",
+    "votes": "8"
+  },
+  {
+    "id": 9,
+    "name": "product9",
+    "quote": "900",
+    "votes": "9"
+  },
+  {
+    "id": 10,
+    "name": "product10",
+    "quote": "1000",
+    "votes": "10"
+  }
+]
