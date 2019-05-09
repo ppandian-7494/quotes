@@ -43,14 +43,20 @@ public class OrdersController {
     // READ
     @GetMapping("/readquotes")
     @RequestMapping(value="", method=RequestMethod.GET)
-    public void listOrdersReverseByVotes()
+    public Boolean listOrdersReverseByVotes()
     {
-        List<Orders> ordersList = (List<Orders>) ordersService.list();
+        List<Orders> reversedordersList = (List<Orders>) ordersService.list();
+        reversedordersList.sort(Comparator.comparing(Orders::getVotes)
+                .reversed()
+        );
+        reversedordersList.forEach(System.out::println);
+
+        List<Orders> ordersList = reversedordersList;
         ordersList.sort(Comparator.comparing(Orders::getVotes)
                 .reversed()
         );
-        ordersList.forEach(System.out::println);
-
+        if(ordersList.equals(reversedordersList)) {return true;}
+        return false;
     }
 
 }

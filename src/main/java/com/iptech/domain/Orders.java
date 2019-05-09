@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Orders {
@@ -44,6 +45,10 @@ public class Orders {
 
     public void setVotes(long votes) {
         this.votes = votes;
+    }
+
+    public boolean equals(Orders orders) {
+        return (this.getId() == orders.getId() && this.getName() == orders.getName() && this.getQuote() == orders.getQuote() && this.getVotes() == orders.getVotes());
     }
 
     @Override

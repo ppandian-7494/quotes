@@ -20,38 +20,4 @@ public class QuotesApplication {
         SpringApplication.run(QuotesApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(OrdersController ordersController){
-        return args -> {
-//            read JSON and load json
-            ObjectMapper mapper = new ObjectMapper();
-            TypeReference<List<Orders>> typeReference = new TypeReference<List<Orders>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/orders.json");
-            try {
-                List<Orders> ordersList = mapper.readValue(inputStream,typeReference);
-                for(Orders orders : ordersList) {
-                    ordersController.createOrder(orders);
-                }
-            } catch (IOException e){
-                System.out.println("Unable to save orders: " + e.getMessage());
-            }
-
-//            update votes and load json
-            mapper = new ObjectMapper();
-            typeReference = new TypeReference<List<Orders>>(){};
-            inputStream = TypeReference.class.getResourceAsStream("/json/votes.json");
-            try {
-                List<Orders> ordersList = mapper.readValue(inputStream,typeReference);
-                for(Orders orders : ordersList) {
-                    ordersController.updateVotes(orders.getId(), orders);
-                }
-            } catch (IOException e){
-                System.out.println("Unable to update votes: " + e.getMessage());
-            }
-
-            ordersController.listOrdersReverseByVotes();
-
-        };
-    }
-
 }
